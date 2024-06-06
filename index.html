@@ -35,8 +35,93 @@
         .weiß_unten
         {
             background-color: white;
-            height: 100vh;
             padding: 20px;
+            color: black;
+        }
+        h2 
+        {
+            font-size: 36px;
+        }
+        p 
+        {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .content-section
+        {
+            display: flex;
+            align-items: center;
+            margin: 50px 0;
+        }
+        .content-section:nth-child(even) 
+        {
+            flex-direction: row-reverse;
+        }
+        .content-section:nth-child(odd) 
+        {
+            flex-direction: row;
+        }
+        .text
+        {
+            width: 50%;
+            padding: 20px;
+        }
+        .image
+        {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image img
+        {
+            width: 80%;
+            height: auto;
+        }
+
+        /* Dropdown-Menu */
+        .dropdown {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: gray;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: lightgray;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
     </style>
@@ -45,22 +130,115 @@
 
 <body>
 
+    <div class="dropdown">
+        <button class="dropbtn">Menü</button>
+        <div class="dropdown-content">
+            <a href="#section1">Link 1</a>
+            <a href="#section2">Link 2</a>
+            <a href="#section3">Link 3</a>
+            <a href="#section4">Link 4</a>
+            <a href="#section5">Link 5</a>
+        </div>
+    </div>
+
     <div class="schwarz_oben">
-
         <h2>SQL für Anfänger</h2>
-
     </div>
 
     <div class="weiß_unten">
+        <div class="content-section" id="section1">
+            <div class="text">
+                <h2>Was ist eigentlich SQL?</h2>
+                <p>SQL (Structured Query Language) ist eine Programmiersprache, 
+                    die zur Verwaltung und Manipulation relationaler Datenbanken verwendet wird. 
+                    Sie ermöglicht das Erstellen, Abrufen, Aktualisieren und Löschen von Daten. 
+                    SQL-Befehle wie SELECT, INSERT, UPDATE und DELETE erlauben den Zugriff auf und die Veränderung von Daten in Datenbanktabellen. 
+                    SQL wird von vielen Datenbankmanagementsystemen (DBMS) wie MySQL, PostgreSQL, Oracle und SQL Server unterstützt. 
+                    Es bietet auch Funktionen zur Definition von Datenstrukturen (DDL), wie CREATE und ALTER, 
+                    sowie zur Steuerung des Datenzugriffs (DCL), wie GRANT und REVOKE, und zur Datenintegrität (TCL).</p>
+            </div>
+            <div class="image">
+                <img src="Bilder/SQL_Bild.jpg" alt="SQL Einleitung">
+            </div>
+        </div>
 
-        <h2>Was ist eigentlich SQL?</h2>
-        <p>SQL (Structured Query Language) ist eine Programmiersprache, <br> 
-            die zur Verwaltung und Manipulation relationaler Datenbanken verwendet wird. <br>
-            Sie ermöglicht das Erstellen, Abrufen, Aktualisieren und Löschen von Daten. <br>
-             wie SELECT, INSERT, UPDATE und DELETE erlauben den Zugriff auf und die Veränderung von Daten in Datenbanktabellen. <br>
-             SQL wird von vielen Datenbankmanagementsystemen (DBMS) wie MySQL, PostgreSQL, Oracle und SQL Server unterstützt. <br>
-             Es bietet auch Funktionen zur Definition von Datenstrukturen (DDL), wie CREATE und ALTER, <br>
-             sowie zur Steuerung des Datenzugriffs (DCL), wie GRANT und REVOKE, und zur Datenintegrität (TCL).</p>
+        <div class="content-section" id="section2">
+            <div class="text">
+                <h2>Grundlegende SQL-Befehle</h2>
+                <p>Einige der grundlegenden SQL-Befehle sind:</p>
+                <ul>
+                    <li><strong>SELECT</strong>: Daten aus einer Datenbank abfragen</li>
+                    <li><strong>INSERT</strong>: Neue Daten in eine Tabelle einfügen</li>
+                    <li><strong>UPDATE</strong>: Vorhandene Daten in einer Tabelle aktualisieren</li>
+                    <li><strong>DELETE</strong>: Daten aus einer Tabelle löschen</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="Bilder/SQL_Bild.jpg" alt="SQL Befehle">
+            </div>
+        </div>
+
+        <div class="content-section" id="section3">
+            <div class="text">
+                <h2>SQL Datenbearbeitung</h2>
+                <p>SQL bietet verschiedene Möglichkeiten zur Bearbeitung und Analyse von Daten:</p>
+                <ul>
+                    <li><strong>JOIN</strong>: Daten aus mehreren Tabellen kombinieren</li>
+                    <li><strong>GROUP BY</strong>: Daten gruppieren und aggregieren</li>
+                    <li><strong>ORDER BY</strong>: Daten sortieren</li>
+                    <li><strong>WHERE</strong>: Daten filtern</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="Bilder/SQL_Bild.jpg" alt="SQL Datenbearbeitung">
+            </div>
+        </div>
+
+        <div class="content-section" id="section4">
+            <div class="text">
+                <h2>Fortgeschrittene SQL-Funktionen</h2>
+                <p>Für fortgeschrittene Benutzer bietet SQL auch komplexere Funktionen:</p>
+                <ul>
+                    <li><strong>Stored Procedures</strong>: Wiederverwendbare SQL-Codeblöcke</li>
+                    <li><strong>Triggers</strong>: Automatisierte Aktionen bei bestimmten Datenänderungen</li>
+                    <li><strong>Views</strong>: Virtuelle Tabellen, die auf Abfragen basieren</li>
+                    <li><strong>Indexing</strong>: Leistungsoptimierung für Abfragen</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="Bilder/SQL_Bild.jpg" alt="Fortgeschrittene SQL-Funktionen">
+            </div>
+        </div>
+
+        <div class="content-section" id="section5">
+            <div class="text">
+                <h2>Datenbanksicherheit</h2>
+                <p>SQL bietet verschiedene Sicherheitsfunktionen, um den Zugriff auf Daten zu steuern und zu schützen:</p>
+                <ul>
+                    <li><strong>GRANT</strong>: Zugriffsrechte gewähren</li>
+                    <li><strong>REVOKE</strong>: Zugriffsrechte entziehen</li>
+                    <li><strong>Backup und Recovery</strong>: Daten sichern und wiederherstellen</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="Bilder/SQL_Bild.jpg" alt="Datenbanksicherheit">
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="text">
+                <h2>Datenintegrität</h2>
+                <p>SQL hilft auch dabei, die Integrität der Daten zu gewährleisten:</p>
+                <ul>
+                    <li><strong>Constraints</strong>: Regeln für Datenbanktabellen (z.B. PRIMARY KEY, FOREIGN KEY, UNIQUE)</li>
+                    <li><strong>Transactions</strong>: Mehrere SQL-Befehle als eine Einheit ausführen</li>
+                    <li><strong>ACID-Prinzipien</strong>: Gewährleistung der Zuverlässigkeit von Transaktionen (Atomicity, Consistency, Isolation, Durability)</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="Bilder/SQL_Bild.jpg" alt="Datenintegrität">
+            </div>
+        </div>
 
     </div>
 
