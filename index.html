@@ -2,7 +2,6 @@
 <html lang="de">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL Website</title>
@@ -10,18 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-
-        body, html 
-        {
+        body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow-x: hidden;
             font-family: 'League Spartan', sans-serif;
+            scroll-behavior: smooth; /* CSS für smooth scrolling */
         }
-        .schwarz_oben 
-        {
+        .schwarz_oben {
             background-color: black;
             height: 100vh;
             padding: 20px;
@@ -30,55 +27,48 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            font-size: 100px;
+            font-size: 60px;
         }
-        .weiß_unten
-        {
+        .weiß_unten {
             background-color: white;
             padding: 20px;
             color: black;
         }
-        h2 
-        {
+        h2 {
             font-size: 36px;
         }
-        p 
-        {
+        p {
             font-size: 18px;
             line-height: 1.6;
         }
-        .content-section
-        {
+        ul {
+            padding-left: 20px;
+        }
+        .content-section {
             display: flex;
             align-items: center;
             margin: 50px 0;
         }
-        .content-section:nth-child(even) 
-        {
+        .content-section:nth-child(even) {
             flex-direction: row-reverse;
         }
-        .content-section:nth-child(odd) 
-        {
+        .content-section:nth-child(odd) {
             flex-direction: row;
         }
-        .text
-        {
+        .text {
             width: 50%;
             padding: 20px;
         }
-        .image
-        {
+        .image {
             width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .image img
-        {
+        .image img {
             width: 80%;
             height: auto;
         }
-
         /* Dropdown-Menu */
         .dropdown {
             position: absolute;
@@ -86,7 +76,6 @@
             left: 20px;
             display: inline-block;
         }
-
         .dropbtn {
             background-color: black;
             color: white;
@@ -95,11 +84,9 @@
             border: none;
             cursor: pointer;
         }
-
         .dropbtn:hover, .dropbtn:focus {
             background-color: gray;
         }
-
         .dropdown-content {
             display: none;
             position: absolute;
@@ -108,28 +95,22 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
-
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-
         .dropdown-content a:hover {
             background-color: lightgray;
         }
-
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
     </style>
-
 </head>
 
 <body>
-
     <div class="dropdown">
         <button class="dropbtn">Menü</button>
         <div class="dropdown-content">
@@ -138,24 +119,19 @@
             <a href="#section3">SQL Datenbearbeitung</a>
             <a href="#section4">Fortgeschrittene SQL-Funktionen</a>
             <a href="#section5">Datenbanksicherheit</a>
+            <a href="#section6">Datenintegrität</a>
         </div>
     </div>
 
     <div class="schwarz_oben">
-        <h2>SQL für Anfänger</h2>
+        <h1>SQL für Anfänger</h1>
     </div>
 
     <div class="weiß_unten">
         <div class="content-section" id="section1">
             <div class="text">
                 <h2>Was ist eigentlich SQL?</h2>
-                <p>SQL (Structured Query Language) ist eine Programmiersprache, 
-                    die zur Verwaltung und Manipulation relationaler Datenbanken verwendet wird. 
-                    Sie ermöglicht das Erstellen, Abrufen, Aktualisieren und Löschen von Daten. 
-                    SQL-Befehle wie SELECT, INSERT, UPDATE und DELETE erlauben den Zugriff auf und die Veränderung von Daten in Datenbanktabellen. 
-                    SQL wird von vielen Datenbankmanagementsystemen (DBMS) wie MySQL, PostgreSQL, Oracle und SQL Server unterstützt. 
-                    Es bietet auch Funktionen zur Definition von Datenstrukturen (DDL), wie CREATE und ALTER, 
-                    sowie zur Steuerung des Datenzugriffs (DCL), wie GRANT und REVOKE, und zur Datenintegrität (TCL).</p>
+                <p>SQL (Structured Query Language) ist eine Programmiersprache zur Verwaltung und Manipulation relationaler Datenbanken. Mit SQL können Datenbanken erstellt, abgefragt, aktualisiert und gelöscht werden. SQL-Befehle wie <strong>SELECT</strong>, <strong>INSERT</strong>, <strong>UPDATE</strong> und <strong>DELETE</strong> ermöglichen den Zugriff auf und die Veränderung von Daten in Datenbanktabellen. SQL wird von vielen Datenbankmanagementsystemen (DBMS) wie MySQL, PostgreSQL, Oracle und SQL Server unterstützt. Es bietet auch Funktionen zur Definition von Datenstrukturen (DDL) und zur Steuerung des Datenzugriffs (DCL).</p>
             </div>
             <div class="image">
                 <img src="Bilder/Apple_Headquarters.webp" alt="SQL Einleitung">
@@ -165,13 +141,18 @@
         <div class="content-section" id="section2">
             <div class="text">
                 <h2>Grundlegende SQL-Befehle</h2>
-                <p>Einige der grundlegenden SQL-Befehle sind:</p>
+                <p>Die grundlegenden SQL-Befehle sind:</p>
                 <ul>
                     <li><strong>SELECT</strong>: Daten aus einer Datenbank abfragen</li>
                     <li><strong>INSERT</strong>: Neue Daten in eine Tabelle einfügen</li>
                     <li><strong>UPDATE</strong>: Vorhandene Daten in einer Tabelle aktualisieren</li>
                     <li><strong>DELETE</strong>: Daten aus einer Tabelle löschen</li>
                 </ul>
+                <p>Beispiele:</p>
+                <pre><code>SELECT * FROM users;
+INSERT INTO users (name, email) VALUES ('Max Mustermann', 'max@example.com');
+UPDATE users SET email='maxi@example.com' WHERE name='Max Mustermann';
+DELETE FROM users WHERE name='Max Mustermann';</code></pre>
             </div>
             <div class="image">
                 <img src="Bilder/Code.webp" alt="SQL Befehle">
@@ -188,6 +169,12 @@
                     <li><strong>ORDER BY</strong>: Daten sortieren</li>
                     <li><strong>WHERE</strong>: Daten filtern</li>
                 </ul>
+                <p>Beispiele:</p>
+                <pre><code>SELECT users.name, orders.amount FROM users
+JOIN orders ON users.id = orders.user_id;
+SELECT COUNT(*), department FROM employees GROUP BY department;
+SELECT * FROM products ORDER BY price DESC;
+SELECT * FROM customers WHERE city='Berlin';</code></pre>
             </div>
             <div class="image">
                 <img src="Bilder/Gebäude.jpg" alt="SQL Datenbearbeitung">
@@ -204,6 +191,20 @@
                     <li><strong>Views</strong>: Virtuelle Tabellen, die auf Abfragen basieren</li>
                     <li><strong>Indexing</strong>: Leistungsoptimierung für Abfragen</li>
                 </ul>
+                <p>Beispiele:</p>
+                <pre><code>CREATE PROCEDURE AddUser(IN name VARCHAR(100), IN email VARCHAR(100))
+BEGIN
+    INSERT INTO users (name, email) VALUES (name, email);
+END;
+CREATE TRIGGER after_update_users
+AFTER UPDATE ON users
+FOR EACH ROW
+BEGIN
+    INSERT INTO audit_log (user_id, action) VALUES (OLD.id, 'Updated');
+END;
+CREATE VIEW active_users AS
+SELECT * FROM users WHERE active=1;
+CREATE INDEX idx_users_email ON users(email);</code></pre>
             </div>
             <div class="image">
                 <img src="Bilder/Wanderer.jpg" alt="Fortgeschrittene SQL-Funktionen">
@@ -219,13 +220,18 @@
                     <li><strong>REVOKE</strong>: Zugriffsrechte entziehen</li>
                     <li><strong>Backup und Recovery</strong>: Daten sichern und wiederherstellen</li>
                 </ul>
+                <p>Beispiele:</p>
+                <pre><code>GRANT SELECT, INSERT ON users TO 'user'@'localhost';
+REVOKE INSERT ON users FROM 'user'@'localhost';
+BACKUP DATABASE my_database TO DISK='C:\\backup\\my_database.bak';
+RESTORE DATABASE my_database FROM DISK='C:\\backup\\my_database.bak';</code></pre>
             </div>
             <div class="image">
                 <img src="Bilder/Safety.jpg" alt="Datenbanksicherheit">
             </div>
         </div>
 
-        <div class="content-section">
+        <div class="content-section" id="section6">
             <div class="text">
                 <h2>Datenintegrität</h2>
                 <p>SQL hilft auch dabei, die Integrität der Daten zu gewährleisten:</p>
@@ -234,14 +240,24 @@
                     <li><strong>Transactions</strong>: Mehrere SQL-Befehle als eine Einheit ausführen</li>
                     <li><strong>ACID-Prinzipien</strong>: Gewährleistung der Zuverlässigkeit von Transaktionen (Atomicity, Consistency, Isolation, Durability)</li>
                 </ul>
+                <p>Beispiele:</p>
+                <pre><code>CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments(id)
+);
+START TRANSACTION;
+UPDATE accounts SET balance = balance - 100 WHERE user_id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE user_id = 2;
+COMMIT;
+ROLLBACK;</code></pre>
             </div>
             <div class="image">
                 <img src="Bilder/Integrität.jpg" alt="Datenintegrität">
             </div>
         </div>
-
     </div>
-
 </body>
 
 </html>
