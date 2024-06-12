@@ -2,6 +2,7 @@
 <html lang="de">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL Website</title>
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
+        
         body, html {
             margin: 0;
             padding: 0;
@@ -69,7 +71,6 @@
             width: 80%;
             height: auto;
         }
-        /* Dropdown-Menu */
         .dropdown {
             position: absolute;
             top: 20px;
@@ -107,48 +108,79 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
     </style>
+
 </head>
 
 <body>
+
     <div class="dropdown">
+
         <button class="dropbtn">Menü</button>
+
         <div class="dropdown-content">
+
             <a href="#section1">Was ist eigentlich SQL?</a>
             <a href="#section2">Grundlegende SQL-Befehle</a>
             <a href="#section3">SQL Datenbearbeitung</a>
             <a href="#section4">Fortgeschrittene SQL-Funktionen</a>
             <a href="#section5">Datenbanksicherheit</a>
             <a href="#section6">Datenintegrität</a>
+
         </div>
+
     </div>
 
     <div class="schwarz_oben">
+
         <h1>SQL für Anfänger</h1>
+
     </div>
 
     <div class="weiß_unten">
+
         <div class="content-section" id="section1">
+
             <div class="text">
+
                 <h2>Was ist eigentlich SQL?</h2>
-                <p>SQL (Structured Query Language) ist eine Programmiersprache zur Verwaltung und Manipulation relationaler Datenbanken. Mit SQL können Datenbanken erstellt, abgefragt, aktualisiert und gelöscht werden. SQL-Befehle wie <strong>SELECT</strong>, <strong>INSERT</strong>, <strong>UPDATE</strong> und <strong>DELETE</strong> ermöglichen den Zugriff auf und die Veränderung von Daten in Datenbanktabellen. SQL wird von vielen Datenbankmanagementsystemen (DBMS) wie MySQL, PostgreSQL, Oracle und SQL Server unterstützt. Es bietet auch Funktionen zur Definition von Datenstrukturen (DDL) und zur Steuerung des Datenzugriffs (DCL).</p>
+
+                <p>
+                    SQL (Structured Query Language) ist eine Programmiersprache zur Verwaltung und Manipulation relationaler Datenbanken. Mit SQL können Datenbanken erstellt, abgefragt, aktualisiert und gelöscht werden. 
+                    SQL-Befehle wie <strong>SELECT</strong>, <strong>INSERT</strong>, <strong>UPDATE</strong> und <strong>DELETE</strong> ermöglichen den Zugriff auf und die Veränderung von Daten in Datenbanktabellen. 
+                    SQL wird von vielen Datenbankmanagementsystemen (DBMS) wie MySQL, PostgreSQL, Oracle und SQL Server unterstützt. Es bietet auch Funktionen zur Definition von Datenstrukturen (DDL) und zur Steuerung des Datenzugriffs (DCL).
+                </p>
+
             </div>
+            
             <div class="image">
+
                 <img src="Bilder/Apple_Headquarters.webp" alt="SQL Einleitung">
+
             </div>
+
         </div>
 
         <div class="content-section" id="section2">
+
             <div class="text">
+
                 <h2>Grundlegende SQL-Befehle</h2>
+
                 <p>Die grundlegenden SQL-Befehle sind:</p>
+
                 <ul>
+
                     <li><strong>SELECT</strong>: Daten aus einer Datenbank abfragen</li>
                     <li><strong>INSERT</strong>: Neue Daten in eine Tabelle einfügen</li>
                     <li><strong>UPDATE</strong>: Vorhandene Daten in einer Tabelle aktualisieren</li>
                     <li><strong>DELETE</strong>: Daten aus einer Tabelle löschen</li>
+
                 </ul>
+
                 <p>Beispiele:</p>
+                
                 <pre><code>SELECT * FROM users;
 INSERT INTO users (name, email) VALUES ('Max Mustermann', 'max@example.com');
 UPDATE users SET email='maxi@example.com' WHERE name='Max Mustermann';
