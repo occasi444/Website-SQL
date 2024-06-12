@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalisierung von Datenbanken</title>
+    <link rel="stylesheet" type="text/css" href="Normalisierung.css">
+</head>
+<body>
+
+    <div class="sidenav">
+        <a href="Hauptseite.html">Hauptmenü</a>
+        <a href="Datenbanken-Allgemein.html">Datenbanken Allgemein</a>
+        <a href="Relationale-Datenbanken.html">Relationale Datenbanken</a>
+        <a href="SQL-Website.html">SQL</a>
+        <a href="ERM Website.html">ERM</a>
+      <a href="Normalisierung.html" style="color: #000000;">Normalisierung</a>
+      </div>
+
+    <h1>Normalisierung von Datenbanken</h1>
+
+    <ul>
+
+        <li><a href="#1. Normalform">1. Normalform</a></li>
+        <li><a href="#2. Normalform">2. Normalform</a></li>
+        <li><a href="#3. Normalform">3. Normalform</a></li>
+        <li><a href="#Weitere Normalformen">Weitere Normalformen</a></li>
+
+    
+    </ul>
+
+    <p>Die Normalisierung ist ein Prozess in der Datenbankentwicklung, bei dem redundante Daten vermieden und Datenbanktabellen strukturiert werden, um die Datenintegrität zu gewährleisten. Sie besteht aus mehreren Stufen, die als Normalformen bezeichnet werden.</p>
+    
+    <h2 id="1. Normalform">1. Normalform (1NF)</h2>
+    <p>Eine Tabelle befindet sich in der 1. Normalform, wenn:</p>
+    
+        <li>Alle Attribute atomar sind (jedes Attribut enthält nur einen Wert).</li>
+        <li>Jedes Attribut eine eindeutige Spalte darstellt.</li>
+    
+    <div class="example">
+        <p><strong>Beispiel:</strong></p>
+        <p>Die folgende Tabelle ist nicht in 1NF, weil die Spalte "Telefonnummer" mehrere Werte enthält:</p>
+        <table border="1">
+            <tr>
+                <th>PersonID</th>
+                <th>Name</th>
+                <th>Telefonnummer</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Max Mustermann</td>
+                <td>12345, 67890</td>
+            </tr>
+        </table>
+        <p>In 1NF würde die Tabelle so aussehen:</p>
+        <table border="1">
+            <tr>
+                <th>PersonID</th>
+                <th>Name</th>
+                <th>Telefonnummer</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Max Mustermann</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Max Mustermann</td>
+                <td>67890</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2 id="2. Normalform">2. Normalform (2NF)</h2>
+    <p>Eine Tabelle befindet sich in der 2. Normalform, wenn sie in der 1NF ist und jedes Nichtschlüsselattribut voll funktional vom Primärschlüssel abhängt.</p>
+    <div class="example">
+        <p><strong>Beispiel:</strong></p>
+        <p>Die folgende Tabelle ist in 1NF, aber nicht in 2NF, da "Kursname" nur von "KursID" abhängt:</p>
+        <table border="1">
+            <tr>
+                <th>StudentID</th>
+                <th>KursID</th>
+                <th>Kursname</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>101</td>
+                <td>Mathematik</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>102</td>
+                <td>Physik</td>
+            </tr>
+        </table>
+        <p>In 2NF würde die Tabelle so aufgeteilt werden:</p>
+        <table border="1">
+            <tr>
+                <th>StudentID</th>
+                <th>KursID</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>101</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>102</td>
+            </tr>
+        </table>
+        <table border="1">
+            <tr>
+                <th>KursID</th>
+                <th>Kursname</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Mathematik</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Physik</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2 id="3. Normalform">3. Normalform (3NF)</h2>
+    <p>Eine Tabelle befindet sich in der 3. Normalform, wenn sie in der 2NF ist und keine Nichtschlüsselattribute transitiv von einem Primärschlüssel abhängen.</p>
+    <div class="example">
+        <p><strong>Beispiel:</strong></p>
+        <p>Die folgende Tabelle ist in 2NF, aber nicht in 3NF, da "Stadt" transitiv von "StudentID" abhängt über "Studentenname":</p>
+        <table border="1">
+            <tr>
+                <th>StudentID</th>
+                <th>Studentenname</th>
+                <th>Stadt</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Max Mustermann</td>
+                <td>Berlin</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Erika Musterfrau</td>
+                <td>München</td>
+            </tr>
+        </table>
+        <p>In 3NF würde die Tabelle so aufgeteilt werden:</p>
+        <table border="1">
+            <tr>
+                <th>StudentID</th>
+                <th>Studentenname</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Max Mustermann</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Erika Musterfrau</td>
+            </tr>
+        </table>
+        <table border="1">
+            <tr>
+                <th>Studentenname</th>
+                <th>Stadt</th>
+            </tr>
+            <tr>
+                <td>Max Mustermann</td>
+                <td>Berlin</td>
+            </tr>
+            <tr>
+                <td>Erika Musterfrau</td>
+                <td>München</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2 id="Weitere Normalformen">Weitere Normalformen</h2>
+    <p>Über die 3. Normalform hinaus gibt es noch die Boyce-Codd-Normalform (BCNF), die 4. Normalform (4NF) und die 5. Normalform (5NF), die spezifischere und seltenere Bedingungen für die Normalisierung behandeln.</p>
+</body>
+</html>
