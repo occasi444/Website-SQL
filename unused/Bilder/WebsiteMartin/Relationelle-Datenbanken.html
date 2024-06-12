@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <meta charset="UTF-8">
+    <title>Relationelle Datenbanken</title>
+
+
+    <style>
+
+      {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+
+      body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          color: #333;
+          padding: 20px;
+          max-width: 1200px;
+          margin: auto;
+
+
+
+      }
+
+
+      h1 {
+          font-family: 'Roboto Slab', serif;
+          font-weight: 700;
+          font-size: 2.5rem;
+          text-align: center;
+          margin-bottom: 20px;
+          color: #4a90e2;
+      }
+
+
+      ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 40px;
+          background-color: #34495e;
+          padding: 10px;
+          border-radius: 10px;
+      }
+
+      ul li {
+          margin: 0 15px;
+      }
+
+      ul li a {
+          text-decoration: none;
+          font-weight: 700;
+          color: #ecf0f1;
+          
+      }
+
+      ul li a:hover {
+          color: #e74c3c;
+          transform: scale(1.1);
+      }
+
+
+      h2 {
+          font-family: 'Roboto Slab', serif;
+          font-weight: 700;
+          font-size: 2rem;
+          margin-top: 40px;
+          color: #2c3e50;
+          border-bottom: 2px solid #4a90e2;
+          padding-bottom: 10px;
+      }
+
+      p {
+          margin-bottom: 20px;
+          font-size: 1.1rem;
+      }
+
+      ol {
+          margin-left: 20px;
+          margin-bottom: 20px;
+      }
+
+      ol li {
+          margin-bottom: 10px;
+      }
+
+      img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 20px auto;
+          border: 2px solid #4a90e2;
+          border-radius: 8px;
+      }
+
+
+      h3 {
+          font-family: 'Roboto Slab', serif;
+          font-weight: 700;
+          font-size: 1.5rem;
+          margin-top: 30px;
+          color: #2980b9;
+      }
+
+      strong {
+          color: #e74c3c;
+      }
+
+      @media (max-width: 768px) {
+          body {
+              padding: 10px;
+          }
+
+          h1 {
+              font-size: 2rem;
+          }
+
+          h2 {
+              font-size: 1.75rem;
+          }
+
+          h3 {
+              font-size: 1.25rem;
+          }
+
+          ul {
+              flex-direction: column;
+              align-items: center;
+          }
+
+          ul li {
+              margin: 10px 0;
+          }
+      }
+
+      /* The sidebar menu */
+      .sidenav {
+        height: 100%; /* Full-height: remove this if you want "auto" height */
+        width: 200px; /* Set the width of the sidebar */
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #34495e; /* Black */
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 20px;
+      }
+
+      /* The navigation menu links */
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
+        display: block;
+      }
+
+      /* When you mouse over the navigation links, change their color */
+      .sidenav a:hover {
+        color: #e74c3c;
+      }
+
+      /* Style page content */
+      .main {
+        margin-left: 160px; /* Same as the width of the sidebar */
+        padding: 0px 10px;
+      }
+
+      /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      } 
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+<div class="sidenav">
+  <a href="#">Datenbanken Allgemein</a>
+  <a href="Relationelle-Datenbanken.html" style="color: #000000;">Relationelle Datenbanken</a>
+  <a href="#">SQL</a>
+  <a href="ERM Website.html">ERM</a>
+<a href="#">Normalisierung</a>
+</div>
+
+<div class="main">
+
+</div> 
+<h1>Relationelle Datenbanken</h1>
+
+<ul>
+
+	<li><a href="#Allgemein">Einführung</a></li>
+	<li><a href="#Funktionsweise">Funktionsweise</a></li>
+	<li><a href="#Vorteile">Vorteile</a></li>
+	<li><a href="#Anwendungsbereiche">Anwendungsbereiche</a></li>
+
+</ul>
+
+<h2 id="Einführung">Einführung in Relationale Datenbanken</h2>
+
+<p>Relationale Datenbanken sind ein tragendes Element der Informatik und Datenverwaltung.
+Sie erlauben es größere Mengen an Daten effizient und Strukturiert zu verwalten.
+Eine relationale Datenbank speichert Daten in Tabellen.
+Jede Tabelle besteht aus Zeilen und Spalten. Die Zeilen enthalten einzelne Datensätze, während die Spalten die Attribute dieser Datensätze repräsentieren. Zum Beispiel könnte eine Tabelle für Schüler die Spalten „SchülerNr“, „Name“ und „Klasse“ umfassen.</p>
+
+
+
+
+<h2 id="Funktionsweise">Wie funktionieren relationale Datenbanken?</h2>
+
+<ol>
+<li>Tabellenstruktur: Daten werden in tabellarischer Form gespeichert. Jede Tabelle enthält Zeilen (Datensätze) und Spalten (Attribute).</li>
+<li>Primärschlüssel: Ein Primärschlüssel ist ein spezielles Feld in einer Tabelle, das jeden Datensatz eindeutig identifiziert. In einer Kundentabelle könnte die „KundenID“ als Primärschlüssel dienen.</li>
+<li>Fremdschlüssel: Ein Fremdschlüssel ist ein Feld in einer Tabelle, das auf den Primärschlüssel einer anderen Tabelle verweist und so Beziehungen zwischen den Tabellen herstellt. Eine Bestelltabelle könnte beispielsweise eine „KundenID“ als Fremdschlüssel enthalten, die auf die „KundenID“ in der Kundentabelle verweist.</li>
+<li>SQL (Structured Query Language): SQL ist die Standard-Abfragesprache für relationale Datenbanken. Mit SQL können Daten eingefügt, aktualisiert, gelöscht und abgefragt werden. Außerdem ermöglicht SQL die Definition und Änderung der Datenstruktur.</li>
+</ol>
+
+<img src="Relationelle.png">
+
+<h2 id="Vorteile">Vorteile relationaler Datenbanken</h2>
+
+<ol>
+<li>Datenintegrität: Primär- und Fremdschlüssel sorgen dafür, dass die Daten konsistent und korrekt bleiben.</li>
+<li>Flexibilität: Relationale Datenbanken ermöglichen komplexe Abfragen und bieten vielfältige Analyseoptionen.</li>
+<li>Sicherheit: Benutzerrechte und Zugriffskontrollen können eingerichtet werden, um den Zugriff auf sensible Daten zu regeln.</li>
+<li>Skalierbarkeit: Relationale Datenbanken können große Datenmengen effizient verwalten und sind erweiterbar, um wachsende Anforderungen zu erfüllen.</li>
+</ol>
+
+
+<h2 id="Anwendungsbereiche">Anwendungsbereiche</h2>
+
+
+<p>Relationale Datenbanken finden in vielen Bereichen Anwendung, darunter:</p>
+
+<ol>
+<li>Finanzwesen
+: Verwaltung von Bankkonten und Transaktionen.</li>
+<li>Gesundheitswesen
+: Speicherung von Patientendaten und medizinischen Aufzeichnungen.</li>
+<li>E-Commerce
+: Verwaltung von Produktinformationen, Kundenbestellungen und Lagerbeständen.</li>
+<li>Bildungswesen
+: Verwaltung von Schüler-, Studenten- und Kursinformationen.</li>
+</ol>
+
+
+</body>
+</html>
+
+
+
+
+
