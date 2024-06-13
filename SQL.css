@@ -5,7 +5,6 @@ html {
     height: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
-
 }
 
 .content {
@@ -43,7 +42,7 @@ ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;  /* Added this line to center align items vertically */
+    align-items: center;
     margin-bottom: 40px;
     background-color: #1B4D3E;
     padding: 10px;
@@ -59,9 +58,9 @@ ul li a {
     font-weight: 700;
     color: #ffffff;
     display: flex;
-    align-items: center;  /* Ensure text inside links is centered vertically */
-    height: 100%;  /* Ensure the links take the full height of the list item */
-    padding: 10px 0;  /* Add padding to make the clickable area larger */
+    align-items: center; 
+    height: 100%;  
+    padding: 10px 0; 
 }
 
 ul li a:hover {
